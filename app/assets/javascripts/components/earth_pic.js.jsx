@@ -22,18 +22,18 @@ var EarthPic = React.createClass({
     render: function() {
         var earthPic = this.props.earthPic;
         var earthMediaUrl = earthPic.url;
-        return ( <
-            div style = {
+        return (
+          <div style = {
                 earthStyle
             } >
-            <
-            img src = {
+            <img src = {
                 earthMediaUrl
             }
             style = {
                 imageStyle
             }
-            /> </div>
+            />
+          </div>
         );
     }
 });
