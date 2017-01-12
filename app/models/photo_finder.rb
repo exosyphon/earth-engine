@@ -16,6 +16,7 @@ class PhotoFinder
   private
 
   def fetch_new_records?
+    return true if Record.all.count == 0
     Record.all.last.created_at < 1.day.ago
   end
 
