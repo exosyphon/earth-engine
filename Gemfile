@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'react-rails', '~> 1.5'
 
+gem 'rails_12factor', group: :production
+
 gem 'faraday', '0.7.6'
 
 group :development, :test do
@@ -51,4 +53,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+ruby "2.1.2"
 
