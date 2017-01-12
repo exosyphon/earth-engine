@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
   def index
     find_more_photos
-    @record = Record.all.first
+    @record = Record.all.sample
     respond_to do |format|
       format.html { render :index }
       format.json { render json: {earthPic: Record.all.sample} }
