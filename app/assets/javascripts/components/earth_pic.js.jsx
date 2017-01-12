@@ -1,12 +1,12 @@
 var earthStyle = {
     position: 'relative',
     display: 'inline-block',
-    width: '300px',
-    height: '400px',
+    width: '1300px',
+    height: '1400px',
     margin: '10px'
 };
 var imageStyle = {
-    maxHeight: '400px',
+    maxHeight: '700px',
     boxShadow: '0px 1px 1px 0px #aaa',
     border: '1px solid #fff'
 };
