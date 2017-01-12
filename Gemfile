@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 
-gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
-
 group :development, :test do
   gem 'sqlite3'
 end
