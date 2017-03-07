@@ -24,9 +24,14 @@ var Application = React.createClass({
   },
 
 	updateInterval: function(event) {
+		var value = event.target.value;
+
+		if (value < 5) {
+		 value = 5;
+		}
 		this.setState({
 			interval: event.target.value,
-		  auto_complete_interval: event.target.value * 1000,
+		  auto_complete_interval: value * 1000,
 		});
 	},
 
