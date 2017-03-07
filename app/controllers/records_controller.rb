@@ -8,6 +8,13 @@ class RecordsController < ApplicationController
     end
   end
 
+  def destroy
+  	Record.find_by(id: params[:id]).destroy
+
+    @record = Record.all.sample
+  	redirect_to records_path
+	end
+
   private
 
   def find_more_photos
