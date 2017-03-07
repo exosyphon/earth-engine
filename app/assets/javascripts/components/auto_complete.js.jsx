@@ -21,12 +21,16 @@ var AutoComplete = React.createClass({
     this.setState({countDown: countDown});
 	},
 
-	componentWillReceiveProps: function() {
-		clearInterval(this.state.countDown);
-    var countDown = setInterval(this.fetchData, parseInt(this.props.interval));
-    this.setState({countDown: countDown});
-	},
-
+	componentWillReceiveProps: function(nextProps) {
+    if (this.props.interval !== nextProps.interval) {
+      clearInterval(this.state.countDown);
+      var countDown = setInterval(this.fetchData, parseInt(nextProps.interval));
+      this.setState({
+        countDown: countDown
+      });
+    }
+  },
+  
   render: function () {
     return (<div className="loader"/>);
   }
