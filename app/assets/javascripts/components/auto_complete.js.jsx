@@ -3,7 +3,8 @@ var AutoComplete = React.createClass({
     return {
       url: null,
       interval: 60000,
-      callback: null
+      callback: null,
+      countDown: null
     };
   },
   fetchData: function (url) {
@@ -14,9 +15,18 @@ var AutoComplete = React.createClass({
       }.bind(this)
     });
   },
-  componentDidMount: function () {
-    setInterval(this.fetchData, parseInt(this.props.interval));
-  },
+  
+ 	componentDidMount: function() {
+    var countDown = setInterval(this.fetchData, parseInt(this.props.interval));
+    this.setState({countDown: countDown});
+	},
+
+	componentWillReceiveProps: function() {
+		clearInterval(this.state.countDown);
+    var countDown = setInterval(this.fetchData, parseInt(this.props.interval));
+    this.setState({countDown: countDown});
+	},
+
   render: function () {
     return (<div className="loader"/>);
   }
